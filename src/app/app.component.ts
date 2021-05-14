@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   public employees: Employee[];
 
   constructor(private employeeService: EmployeeService){}
-
+//overrides, and run whenever component is initialized and calls getEmployee()
   ngOnInit(){
     this.getEmployee();
   }

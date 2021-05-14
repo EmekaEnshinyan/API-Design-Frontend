@@ -4,6 +4,6 @@
 
 export const environment = {
   production: false,
-  //backend url
+  //backend server url and can now access url through var
   apiBaseUrl: 'http://localhost8080'
 };
