@@ -13,6 +13,6 @@ import { EmployeeService } from './employee.service';
   ],
   //done manually to let angular app know about service
   providers: [EmployeeService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
