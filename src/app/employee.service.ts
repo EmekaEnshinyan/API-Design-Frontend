@@ -16,13 +16,22 @@ export class EmployeeService {
   constructor(private http: HttpClient) {}
 //gets list of all employees
 //tells http client where to make the requests and type of requests
-  public getEmployees(): Observable<Employee> {
+  public getEmployee(): Observable<Employee> {
     //common js technique to put variables and strings at same time
     return this.http.get<any>(`${this.apiServerUrl}/employee/all` ) //<-- get requrest
     }
-  public addEmployees(employee: Employee): Observable<Employee> {
+  public addEmployee(employee: Employee): Observable<Employee> {
     //common js technique to put variables and strings at same time
     return this.http.post<Employee>(`${this.apiServerUrl}/employee/add`, employee); //<-- post request needed for adding
     }
+    public updateEmployee(employee: Employee): Observable<Employee> {
+      //common js technique to put variables and strings at same time
+      return this.http.put<Employee>(`${this.apiServerUrl}/employee/add`, employee); //<-- post request needed for adding
+      }
+      //deleting empl will not send any response back, and thus use observable<void>
+    public deleteEmployee(employeeId: number): Observable<void> {
+      //common js technique to put variables and strings at same time
+      return this.http.delete<void>(`${this.apiServerUrl}/employee/delete/${employeeId}`); //<-- post request needed for adding
+    }
   }
-
+  
