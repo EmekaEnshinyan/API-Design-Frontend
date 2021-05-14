@@ -1,17 +1,15 @@
 //create functions that can reach backend by making http requests using httpclient
 
 import { Injectable } from '@angular/core';
-import { ClientHttp2Session } from 'http2';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Employee } from './employee';
-
-@Injectable({
-  providedIn: 'root'
-})
+import { environment } from 'src/environments/environment';
+//makes angular aware that this is your service
+@Injectable({providedIn: 'root'})
 export class EmployeeService {
-//gets url
-  private apiServerUrl = ''; 
+//access to backend url connected to environments.ts
+  private apiServerUrl = environment.apiBaseUrl; 
   //this allows requests to backend
   constructor(private http: HttpClient) {}
 //gets list of all employees
