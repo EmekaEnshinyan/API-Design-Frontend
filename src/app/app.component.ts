@@ -9,7 +9,7 @@ import { EmployeeService } from './employee.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public employee: Employee[];
+  public employees: Employee[];
 
   constructor(private employeeService: EmployeeService){}
 //overrides, and run whenever component is initialized and calls getEmployee()
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     //subscribed used so we are notified when data comes back from server
     this.employeeService.getEmployee().subscribe(
       (response: Employee[]) => {
-        this.employee = response;
+        this.employees = response;
    },
     (error: HttpErrorResponse) => {
       alert(error.message);

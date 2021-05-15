@@ -18,7 +18,7 @@ export class EmployeeService {
 //here is where you get the ARRAY of employees and must reflect in app.components getEmployee() call
   public getEmployee(): Observable<Employee[]> {
     //common js technique to put variables and strings at same time
-    return this.http.get<Employee[]>(`${this.apiServerUrl}/employee/all` ) //<-- get requrest
+    return this.http.get<Employee[]>(`${this.apiServerUrl}/employee/all`) //<-- get requrest
     }
   public addEmployee(employee: Employee): Observable<Employee> {
     //common js technique to put variables and strings at same time
